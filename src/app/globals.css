@@ -1,0 +1,406 @@
+/* Importiere Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.min.css';
+
+/* Eigene Styles */
+:root {
+  /* Farben */
+  --bf-gold: #D4AF37;
+  --bf-black: #111111;
+  --bf-dark-gray: #333333;
+  --bf-light-gray: #f5f5f5;
+  
+  /* Abstände */
+  --section-spacing-y: 5rem;
+  --card-spacing: 1.5rem;
+  
+  /* Übergänge */
+  --transition-duration: 0.3s;
+  --transition-timing: ease;
+}
+
+/* Globale Stile */
+body {
+  color: #f5f5f5; /* Helleres Weiß für bessere Lesbarkeit */
+  background-color: var(--bf-black);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  padding-top: 56px; /* Standardhöhe der Navigation */
+}
+
+@media (min-width: 992px) {
+  body {
+    padding-top: 76px; /* Höhere Navigation auf größeren Bildschirmen */
+  }
+}
+
+main {
+  flex: 1;
+}
+
+a {
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+
+/* Hintergrundfarben */
+.bg-black-custom {
+  background-color: var(--bf-black);
+}
+
+.bg-dark-gray {
+  background-color: var(--bf-dark-gray);
+}
+
+/* Textfarben */
+.text-gold {
+  color: var(--bf-gold) !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5); /* Leichter Schattenwurf für bessere Lesbarkeit */
+}
+
+/* Hintergrund-Utility-Klassen */
+.bg-gold {
+  background-color: var(--bf-gold);
+}
+
+/* Button-Stile */
+.btn-gold {
+  background-color: var(--bf-gold);
+  color: var(--bf-black);
+  border: none;
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              transform var(--transition-duration) var(--transition-timing);
+}
+
+.btn-gold:hover,
+.btn-gold:focus {
+  background-color: #c9a227;
+  color: var(--bf-black);
+  transform: translateY(-2px);
+}
+
+.btn-outline-gold {
+  background-color: transparent;
+  color: var(--bf-gold);
+  border: 1px solid var(--bf-gold);
+  transition: background-color var(--transition-duration) var(--transition-timing),
+              color var(--transition-duration) var(--transition-timing),
+              transform var(--transition-duration) var(--transition-timing);
+}
+
+.btn-outline-gold:hover,
+.btn-outline-gold:focus {
+  background-color: var(--bf-gold);
+  color: var(--bf-black);
+  transform: translateY(-2px);
+}
+
+/* Rahmen */
+.border-gold {
+  border-color: var(--bf-gold) !important;
+}
+
+/* Karten-Stile */
+.service-card {
+  transition: transform var(--transition-duration) var(--transition-timing), 
+              border-color var(--transition-duration) var(--transition-timing);
+  border: 1px solid transparent;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  border-color: var(--bf-gold);
+}
+
+/* Testimonial-Karten */
+.testimonial-card {
+  position: relative;
+}
+
+.testimonial-card::before {
+  content: '"';
+  position: absolute;
+  top: 10px;
+  left: 15px;
+  font-size: 60px;
+  color: var(--bf-gold);
+  opacity: 0.3;
+}
+
+/* Navigation-Stile */
+.navbar-dark .navbar-nav .nav-link {
+  color: rgba(255, 255, 255, 0.85);
+  font-weight: 500;
+  transition: color var(--transition-duration) var(--transition-timing);
+}
+
+.navbar-dark .navbar-nav .nav-link:hover,
+.navbar-dark .navbar-nav .nav-link:focus,
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--bf-gold);
+}
+
+/* Fixierte Navigation Styles */
+.fixed-top {
+  position: fixed;
+  top: 0;
+  right: 0;
+  left: 0;
+  z-index: 1030;
+}
+
+/* Aktive Navigation-Links */
+.navbar-dark .navbar-nav .nav-link.active {
+  color: var(--bf-gold) !important;
+  position: relative;
+}
+
+.navbar-dark .navbar-nav .nav-link.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background-color: var(--bf-gold);
+}
+
+/* Responsive Anpassungen für Navigation */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: var(--bf-black);
+    padding: 1rem;
+    border-radius: 0 0 5px 5px;
+  }
+}
+
+/* Navbar Brand (Logo) */
+.navbar-brand {
+  font-size: 1.25rem;
+}
+
+@media (min-width: 992px) {
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+}
+
+/* Formular-Stile */
+.form-control,
+.form-select {
+  transition: border-color var(--transition-duration) var(--transition-timing);
+}
+
+.form-control:focus,
+.form-select:focus {
+  border-color: var(--bf-gold);
+  box-shadow: 0 0 0 0.25rem rgba(212, 175, 55, 0.25);
+}
+
+/* Accessibility-Verbesserungen */
+:focus {
+  outline: 2px solid var(--bf-gold);
+  outline-offset: 2px;
+}
+
+/* Animationen */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fade-in {
+  animation: fadeIn 0.8s ease forwards;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 767.98px) {
+  h1.display-4 {
+    font-size: 2.5rem;
+  }
+  
+  .container.py-5 {
+    padding-top: 3rem !important;
+    padding-bottom: 3rem !important;
+  }
+}
+
+/* Print-Stile */
+@media print {
+  body {
+    background-color: white;
+    color: black;
+  }
+  
+  .bg-black-custom,
+  .bg-dark,
+  .bg-dark-gray {
+    background-color: white !important;
+    color: black !important;
+  }
+  
+  .text-gold {
+    color: black !important;
+  }
+  
+  .btn-gold,
+  .btn-outline-gold {
+    border: 1px solid black;
+    background-color: white;
+    color: black;
+  }
+}
+
+/* Header Styles */
+.navbar-brand img,
+.navbar-brand svg {
+  transition: transform var(--transition-duration) var(--transition-timing);
+}
+
+.navbar-brand:hover img,
+.navbar-brand:hover svg {
+  transform: scale(1.05);
+}
+
+/* Navbar height adjustments */
+.navbar {
+  min-height: 70px;
+}
+
+@media (min-width: 992px) {
+  .navbar {
+    min-height: 80px;
+  }
+}
+
+/* Logo Text Style */
+.navbar-brand .text-gold {
+  font-size: 1.2rem;
+  letter-spacing: 0.5px;
+}
+
+@media (min-width: 992px) {
+  .navbar-brand .text-gold {
+    font-size: 1.4rem;
+  }
+}
+
+/* Enhanced mobile menu */
+@media (max-width: 991.98px) {
+  .navbar-collapse {
+    background-color: var(--bf-black);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid var(--bf-gold);
+    border-radius: 0 0 8px 8px;
+    padding: 1rem;
+    margin-top: 0.5rem;
+  }
+  
+  .navbar-nav .nav-item {
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+    padding: 0.5rem 0;
+  }
+  
+  .navbar-nav .nav-item:last-child {
+    border-bottom: none;
+  }
+}
+
+/* Verbesserte Textkontraste */
+.bg-black-custom p,
+.bg-dark p,
+.bg-dark-gray p,
+.card-body p {
+  color: rgba(255, 255, 255, 0.9); /* Nahezu weißer Text für guten Kontrast */
+}
+
+/* Verbesserte Lesbarkeit für Listen */
+.list-unstyled li {
+  color: #ffffff;
+  margin-bottom: 0.75rem; /* Mehr Abstand zwischen Listenpunkten */
+}
+
+/* Check-Icons in Listen hervorheben */
+.bi-check2.text-gold {
+  color: var(--bf-gold) !important;
+  font-size: 1.1rem; /* Etwas größer */
+}
+
+/* Karten-Hintergrund etwas aufhellen für besseren Kontrast */
+.card.bg-black-custom {
+  background-color: #161616 !important; /* Leicht heller als var(--bf-black) */
+}
+
+/* Text in Cards besser lesbar machen */
+.card .card-text {
+  color: rgba(255, 255, 255, 0.9) !important; /* Überschreibt eventuell vorhandene sekundäre Textfarben */
+}
+
+/* Sekundäre Texte aufhellen */
+.text-secondary {
+  color: rgba(255, 255, 255, 0.7) !important; /* Heller als Standard */
+}
+
+/* Feature-Listen mit verbesserten Kontrasten */
+.feature-list {
+  list-style: none;
+  padding-left: 0;
+}
+
+.feature-list li {
+  position: relative;
+  padding-left: 1.8rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.feature-list li::before {
+  content: '•'; /* Bullet-Punkt */
+  position: absolute;
+  left: 0.5rem;
+  color: var(--bf-gold);
+  font-size: 1.2rem;
+  line-height: 1;
+}
+
+/* Alternativ mit Icon */
+.feature-list-icon li {
+  position: relative;
+  padding-left: 2rem;
+  margin-bottom: 0.75rem;
+  color: #ffffff;
+}
+
+.feature-list-icon li::before {
+  font-family: "bootstrap-icons";
+  content: "\F26E"; /* Bootstrap-Icon: check2 */
+  position: absolute;
+  left: 0;
+  color: var(--bf-gold);
+  font-size: 1.1rem;
+}
+
+/* Verbesserte Lesbarkeit für Listen in Karten */
+.card .list-unstyled li {
+  color: #ffffff;
+  background-color: rgba(0, 0, 0, 0.2); /* Leicht dunklerer Hintergrund für jeden Listenpunkt */
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.card .list-unstyled li:last-child {
+  margin-bottom: 0;
+}
+
+/* Icon bei bestehenden Listen mit bi-check2 besser positionieren */
+.bi-check2.text-gold.me-2 {
+  display: inline-block;
+  width: 1.2rem;
+  vertical-align: middle;
+}
