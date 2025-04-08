@@ -1,4 +1,3 @@
-// components/ContactForm.js
 "use client";
 import { useState } from 'react';
 
@@ -50,9 +49,6 @@ export default function ContactForm() {
       return;
     }
     
-    // In einer echten Anwendung würden wir hier das Formular an einen Server senden
-    // Da dies nur ein Beispiel ist, simulieren wir eine erfolgreiche Übermittlung
-    
     // Simulierte Verzögerung für das Absenden
     setFormStatus({
       submitted: false,
@@ -79,7 +75,7 @@ export default function ContactForm() {
         inquiryType: 'allgemein',
         message: ''
       });
-    } catch (error) {
+    } catch {
       setFormStatus({
         submitted: false,
         error: true,
