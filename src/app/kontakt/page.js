@@ -1,7 +1,6 @@
 // src/app/kontakt/page.js
 import ContactForm from '@/components/ContactForm';
 import Hero from '@/components/Hero';
-import Link from 'next/link';
 
 export const metadata = {
   title: 'Kontakt | Black Forge Consulting',
