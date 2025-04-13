@@ -1,0 +1,104 @@
+/* [project]/src/components/videoHero.module.css [app-client] (css) */
+.videoHero-module__KD2MTa__videoHeroSection {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  z-index: 1;
+  padding-top: 56px;
+}
+
+.videoHero-module__KD2MTa__videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+.videoHero-module__KD2MTa__videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #111111b3;
+  z-index: 1;
+}
+
+.videoHero-module__KD2MTa__backgroundVideo {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 0;
+  opacity: 0;
+}
+
+.videoHero-module__KD2MTa__fallbackImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url("/images/hero-fallback.jpg");
+  background-size: cover;
+  background-position: center;
+  background-color: #111;
+  z-index: 0;
+  transition: opacity .5s;
+}
+
+.videoHero-module__KD2MTa__fadeIn {
+  opacity: 1;
+  transition: opacity .5s;
+}
+
+.videoHero-module__KD2MTa__fadeOut {
+  opacity: 0;
+  transition: opacity .5s;
+}
+
+@media (width <= 767.98px) {
+  .videoHero-module__KD2MTa__videoHeroSection {
+    height: 80vh;
+    min-height: 500px;
+  }
+}
+
+@media (width >= 768px) and (width <= 991.98px) {
+  .videoHero-module__KD2MTa__videoHeroSection {
+    height: 90vh;
+  }
+}
+
+@media (width >= 992px) {
+  .videoHero-module__KD2MTa__videoHeroSection {
+    padding-top: 76px;
+  }
+}
+
+@media (height <= 500px) and (orientation: landscape) {
+  .videoHero-module__KD2MTa__videoHeroSection {
+    height: auto;
+    padding: 100px 0;
+  }
+}
+
+.videoHero-module__KD2MTa__videoHeroSection h1 {
+  text-shadow: 0 2px 4px #00000080;
+}
+
+.videoHero-module__KD2MTa__videoHeroSection p {
+  text-shadow: 0 1px 2px #00000080;
+}
+
+/*# sourceMappingURL=src_components_videoHero_module_b52d8e88.css.map*/
