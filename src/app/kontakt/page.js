@@ -1,5 +1,4 @@
 // src/app/kontakt/page.js
-import Hero from '@/components/Hero';
 import ContactFormClient from '@/components/ContactFormClient';
 
 export const metadata = {

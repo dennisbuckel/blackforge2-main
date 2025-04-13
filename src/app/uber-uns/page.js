@@ -1,5 +1,4 @@
 // src/app/uber-uns/page.js
-import Hero from '@/components/Hero';
 
 export const metadata = {
   title: 'Über Uns | Black Forge Consulting',

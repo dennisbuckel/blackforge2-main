@@ -1,5 +1,5 @@
 // src/app/leistungen/page.js
-import Hero from '@/components/Hero';
+
 import Button from '@/components/Button';
 import ScrollToAnchor from '@/components/ScrollToAnchor';
 
