@@ -1,4 +1,5 @@
 // src/app/uber-uns/page.js
+import Image from 'next/image';
 
 export const metadata = {
   title: 'Über Uns | Black Forge Consulting',
@@ -31,9 +32,13 @@ export default function UberUns() {
               </p>
             </div>
             <div className="col-lg-6 order-lg-1">
-              <div className="bg-dark-gray p-5 text-center rounded">
-                <p className="text-muted">Bild: Unsere Werte</p>
-              </div>
+                            <Image 
+                   src="/images/mission.png" 
+                  alt="Unser Team" 
+                  width={600} 
+                  height={400} 
+                  className="img-fluid rounded"
+                />
             </div>
           </div>
         </div>
@@ -62,9 +67,13 @@ export default function UberUns() {
               </p>
             </div>
             <div className="col-lg-6">
-              <div className="bg-dark-gray p-5 text-center rounded">
-                <p className="text-muted">Bild: Unser Werdegang</p>
-              </div>
+            <Image 
+                   src="/images/story.png" 
+                  alt="Unser Team" 
+                  width={600} 
+                  height={400} 
+                  className="img-fluid rounded"
+                />
             </div>
           </div>
           

@@ -54,7 +54,7 @@ function PrivacyConsent({ onChange, checked = false }) {
                         lineNumber: 27,
                         columnNumber: 22
                     }, this),
-                    " gelesen und stimme zu, dass meine angegebenen Daten zwecks Kontaktaufnahme gespeichert und verarbeitet werden. Die Daten werden nur für den Zweck der Bearbeitung meines Anliegens verwendet und nach Abschluss auf meine Anfrage hin gelöscht."
+                    " gelesen und stimme zu, dass meine angegebenen Daten zwecks Kontaktaufnahme gespeichert und verarbeitet werden."
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/PrivacyConsent.js",

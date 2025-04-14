@@ -1,4 +1,4 @@
-(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/src_components_ScrollToAnchor_1b13de96.js", {
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([typeof document === "object" ? document.currentScript : undefined, {
 
 "[project]/src/components/ScrollToAnchor.js [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";

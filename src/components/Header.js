@@ -7,6 +7,7 @@ import { useState, useEffect } from 'react';
 export default function Header() {
   const pathname = usePathname();
   const [mounted, setMounted] = useState(false);
+  const [navCollapsed, setNavCollapsed] = useState(true);
 
   // Stellen Sie sicher, dass die Komponente nur auf Client-Seite gerendert wird
   useEffect(() => {
@@ -21,20 +22,28 @@ export default function Header() {
     return path !== '/' && pathname.startsWith(path);
   };
 
+  // Schließe das mobile Menu beim Klick auf einen Link
+  const handleNavLinkClick = () => {
+    if (window.innerWidth < 992) {
+      setNavCollapsed(true);
+    }
+  };
+
   return (
     <header className="navbar navbar-expand-lg navbar-dark bg-black-custom fixed-top">
       <div className="container">
-        {/* Logo mit größeren Dimensionen */}
+        {/* Logo mit angepassten Dimensionen für Mobilgeräte */}
         <Link href="/" className="navbar-brand d-flex align-items-center">
           <Image
             src="/logo.jpeg"
             alt="Black Forge Consulting Logo"
-            width={60}
-            height={60}
-            className="me-3"
+            width={50}
+            height={50}
+            className="me-2"
             priority
           />
-          <div className="logo-text">BLACK FORGE CONSULTING</div>
+          <div className="logo-text font-baskerville d-none d-sm-block">BLACK FORGE CONSULTING</div>
+          <div className="logo-text font-baskerville d-block d-sm-none">BLACK FORGE</div>
         </Link>
        
         {/* Mobile Toggle Button */}
@@ -44,36 +53,41 @@ export default function Header() {
           data-bs-toggle="collapse"
           data-bs-target="#navbarNav"
           aria-controls="navbarNav"
-          aria-expanded="false"
+          aria-expanded={!navCollapsed ? 'true' : 'false'}
           aria-label="Navigation umschalten"
+          onClick={() => setNavCollapsed(!navCollapsed)}
         >
           <span className="navbar-toggler-icon"></span>
         </button>
        
         {/* Navigation Links */}
-        <div className="collapse navbar-collapse justify-content-end" id="navbarNav">
+        <div className={`collapse navbar-collapse justify-content-end ${!navCollapsed ? 'show' : ''}`} id="navbarNav">
           <ul className="navbar-nav">
             <li className="nav-item">
               <Link href="/" 
-                    className={`custom-nav-link ${isActive('/') ? 'active-nav-link' : ''}`}>
+                    className={`custom-nav-link ${isActive('/') ? 'active-nav-link' : ''}`}
+                    onClick={handleNavLinkClick}>
                 HOME
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/uber-uns" 
-                    className={`custom-nav-link ${isActive('/uber-uns') ? 'active-nav-link' : ''}`}>
+                    className={`custom-nav-link ${isActive('/uber-uns') ? 'active-nav-link' : ''}`}
+                    onClick={handleNavLinkClick}>
                 ÜBER UNS
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/leistungen" 
-                    className={`custom-nav-link ${isActive('/leistungen') ? 'active-nav-link' : ''}`}>
+                    className={`custom-nav-link ${isActive('/leistungen') ? 'active-nav-link' : ''}`}
+                    onClick={handleNavLinkClick}>
                 LEISTUNGEN
               </Link>
             </li>
             <li className="nav-item">
               <Link href="/kontakt" 
-                    className={`custom-nav-link ${isActive('/kontakt') ? 'active-nav-link' : ''}`}>
+                    className={`custom-nav-link ${isActive('/kontakt') ? 'active-nav-link' : ''}`}
+                    onClick={handleNavLinkClick}>
                 KONTAKT
               </Link>
             </li>
@@ -153,7 +167,7 @@ export default function Header() {
         /* Media Query für mobile Ansicht */
         @media (max-width: 768px) {
           .logo-text {
-            font-size: 1.4rem;
+            font-size: 1.2rem;
           }
         }
       `}</style>
@@ -215,8 +229,28 @@ export default function Header() {
         
         /* Mobiles Styling */
         @media (max-width: 768px) {
+          .navbar {
+            padding-top: 0.5rem;
+            padding-bottom: 0.5rem;
+          }
+
+          .navbar-brand {
+            padding-top: 0.25rem;
+            padding-bottom: 0.25rem;
+          }
+
+          .custom-nav-link {
+            padding: 0.75rem 1rem;
+            border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+          }
+
           .custom-nav-link::after {
             bottom: -3px;
+          }
+          
+          .navbar-toggler {
+            padding: 0.25rem 0.5rem;
+            border: 1px solid rgba(212, 175, 55, 0.5);
           }
         }
       `}</style>

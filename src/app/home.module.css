@@ -1,17 +1,18 @@
 /* src/app/home.module.css */
 
 /* Full-Screen Hero Sektion im Luxus-Stil */
+/* Full-Screen Hero Sektion im Luxus-Stil */
 .fullScreenHero {
-    height: 100vh; /* 100% der Viewport-Höhe */
-    width: 100%;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0;
-    padding: 0;
-  }
+  height: 100vh; /* 100% der Viewport-Höhe */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
   
   /* Video Container mit präziser Positionierung */
   .videoContainer {
@@ -141,3 +142,65 @@
       font-size: 2rem; /* Noch kleinere Überschrift */
     }
   }
+  /* Anpassung der Hero-Sektion für mobile Geräte */
+@media (max-width: 767.98px) {
+  .fullScreenHero {
+    height: 90vh; /* Etwas kleiner für mobile Geräte */
+  }
+  
+  .heroContent {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  
+  .heroContent h1 {
+    font-size: 2rem !important;
+    padding-top: 80px; /* Mehr Platz nach oben */
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .heroContent p {
+    font-size: 1rem !important;
+  }
+  
+  /* Anpassung der Scroll-Indikator-Position */
+  .scrollDownIndicator {
+    bottom: 15px;
+  }
+}
+
+/* Änderungen für Header.js */
+
+/* Verbesserter Logo-Text in der mobilen Navigation */
+@media (max-width: 767.98px) {
+  /* Verkleinere das Logo signifikant für mobile Geräte */
+  .logo-text {
+    font-size: 1rem !important;
+    letter-spacing: 0.03em;
+  }
+  
+  /* Kleineres Logo-Bild */
+  .navbar-brand img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  /* Bessere Positionierung des Toggle-Buttons */
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Mehr Platz für die Navigation auf mobilen Geräten */
+  .navbar-collapse {
+    margin-top: 0.75rem;
+  }
+  
+  /* Verbesserte Sichtbarkeit der Navigationspunkte */
+  .custom-nav-link {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+}

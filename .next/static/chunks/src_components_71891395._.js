@@ -1,4 +1,4 @@
-(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push(["static/chunks/src_components_71891395._.js", {
+(globalThis.TURBOPACK = globalThis.TURBOPACK || []).push([typeof document === "object" ? document.currentScript : undefined, {
 
 "[project]/src/components/Header.js [app-client] (ecmascript)": ((__turbopack_context__) => {
 "use strict";
@@ -26,6 +26,7 @@ function Header() {
     _s();
     const pathname = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"])();
     const [mounted, setMounted] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(false);
+    const [navCollapsed, setNavCollapsed] = (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useState"])(true);
     // Stellen Sie sicher, dass die Komponente nur auf Client-Seite gerendert wird
     (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$index$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["useEffect"])({
         "Header.useEffect": ()=>{
@@ -39,11 +40,17 @@ function Header() {
         }
         return path !== '/' && pathname.startsWith(path);
     };
+    // Schließe das mobile Menu beim Klick auf einen Link
+    const handleNavLinkClick = ()=>{
+        if (window.innerWidth < 992) {
+            setNavCollapsed(true);
+        }
+    };
     return /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("header", {
-        className: "jsx-944c688d78ff533b" + " " + "navbar navbar-expand-lg navbar-dark bg-black-custom fixed-top",
+        className: "jsx-7dca69f00ab4613d" + " " + "navbar navbar-expand-lg navbar-dark bg-black-custom fixed-top",
         children: [
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                className: "jsx-944c688d78ff533b" + " " + "container",
+                className: "jsx-7dca69f00ab4613d" + " " + "container",
                 children: [
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                         href: "/",
@@ -52,27 +59,35 @@ function Header() {
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$image$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                 src: "/logo.jpeg",
                                 alt: "Black Forge Consulting Logo",
-                                width: 60,
-                                height: 60,
-                                className: "me-3",
+                                width: 50,
+                                height: 50,
+                                className: "me-2",
                                 priority: true
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.js",
-                                lineNumber: 29,
+                                lineNumber: 37,
                                 columnNumber: 11
                             }, this),
                             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
-                                className: "jsx-944c688d78ff533b" + " " + "logo-text",
+                                className: "jsx-7dca69f00ab4613d" + " " + "logo-text font-baskerville d-none d-sm-block",
                                 children: "BLACK FORGE CONSULTING"
                             }, void 0, false, {
                                 fileName: "[project]/src/components/Header.js",
-                                lineNumber: 37,
+                                lineNumber: 45,
+                                columnNumber: 11
+                            }, this),
+                            /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
+                                className: "jsx-7dca69f00ab4613d" + " " + "logo-text font-baskerville d-block d-sm-none",
+                                children: "BLACK FORGE"
+                            }, void 0, false, {
+                                fileName: "[project]/src/components/Header.js",
+                                lineNumber: 46,
                                 columnNumber: 11
                             }, this)
                         ]
                     }, void 0, true, {
                         fileName: "[project]/src/components/Header.js",
-                        lineNumber: 28,
+                        lineNumber: 36,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("button", {
@@ -80,124 +95,129 @@ function Header() {
                         "data-bs-toggle": "collapse",
                         "data-bs-target": "#navbarNav",
                         "aria-controls": "navbarNav",
-                        "aria-expanded": "false",
+                        "aria-expanded": !navCollapsed ? 'true' : 'false',
                         "aria-label": "Navigation umschalten",
-                        className: "jsx-944c688d78ff533b" + " " + "navbar-toggler",
+                        onClick: ()=>setNavCollapsed(!navCollapsed),
+                        className: "jsx-7dca69f00ab4613d" + " " + "navbar-toggler",
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("span", {
-                            className: "jsx-944c688d78ff533b" + " " + "navbar-toggler-icon"
+                            className: "jsx-7dca69f00ab4613d" + " " + "navbar-toggler-icon"
                         }, void 0, false, {
                             fileName: "[project]/src/components/Header.js",
-                            lineNumber: 50,
+                            lineNumber: 60,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Header.js",
-                        lineNumber: 41,
+                        lineNumber: 50,
                         columnNumber: 9
                     }, this),
                     /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("div", {
                         id: "navbarNav",
-                        className: "jsx-944c688d78ff533b" + " " + "collapse navbar-collapse justify-content-end",
+                        className: "jsx-7dca69f00ab4613d" + " " + `collapse navbar-collapse justify-content-end ${!navCollapsed ? 'show' : ''}`,
                         children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("ul", {
-                            className: "jsx-944c688d78ff533b" + " " + "navbar-nav",
+                            className: "jsx-7dca69f00ab4613d" + " " + "navbar-nav",
                             children: [
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-944c688d78ff533b" + " " + "nav-item",
+                                    className: "jsx-7dca69f00ab4613d" + " " + "nav-item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/",
                                         className: `custom-nav-link ${isActive('/') ? 'active-nav-link' : ''}`,
+                                        onClick: handleNavLinkClick,
                                         children: "HOME"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.js",
-                                        lineNumber: 57,
+                                        lineNumber: 67,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.js",
-                                    lineNumber: 56,
+                                    lineNumber: 66,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-944c688d78ff533b" + " " + "nav-item",
+                                    className: "jsx-7dca69f00ab4613d" + " " + "nav-item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/uber-uns",
                                         className: `custom-nav-link ${isActive('/uber-uns') ? 'active-nav-link' : ''}`,
+                                        onClick: handleNavLinkClick,
                                         children: "ÜBER UNS"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.js",
-                                        lineNumber: 63,
+                                        lineNumber: 74,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.js",
-                                    lineNumber: 62,
+                                    lineNumber: 73,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-944c688d78ff533b" + " " + "nav-item",
+                                    className: "jsx-7dca69f00ab4613d" + " " + "nav-item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/leistungen",
                                         className: `custom-nav-link ${isActive('/leistungen') ? 'active-nav-link' : ''}`,
+                                        onClick: handleNavLinkClick,
                                         children: "LEISTUNGEN"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.js",
-                                        lineNumber: 69,
+                                        lineNumber: 81,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.js",
-                                    lineNumber: 68,
+                                    lineNumber: 80,
                                     columnNumber: 13
                                 }, this),
                                 /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])("li", {
-                                    className: "jsx-944c688d78ff533b" + " " + "nav-item",
+                                    className: "jsx-7dca69f00ab4613d" + " " + "nav-item",
                                     children: /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$client$2f$app$2d$dir$2f$link$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
                                         href: "/kontakt",
                                         className: `custom-nav-link ${isActive('/kontakt') ? 'active-nav-link' : ''}`,
+                                        onClick: handleNavLinkClick,
                                         children: "KONTAKT"
                                     }, void 0, false, {
                                         fileName: "[project]/src/components/Header.js",
-                                        lineNumber: 75,
+                                        lineNumber: 88,
                                         columnNumber: 15
                                     }, this)
                                 }, void 0, false, {
                                     fileName: "[project]/src/components/Header.js",
-                                    lineNumber: 74,
+                                    lineNumber: 87,
                                     columnNumber: 13
                                 }, this)
                             ]
                         }, void 0, true, {
                             fileName: "[project]/src/components/Header.js",
-                            lineNumber: 55,
+                            lineNumber: 65,
                             columnNumber: 11
                         }, this)
                     }, void 0, false, {
                         fileName: "[project]/src/components/Header.js",
-                        lineNumber: 54,
+                        lineNumber: 64,
                         columnNumber: 9
                     }, this)
                 ]
             }, void 0, true, {
                 fileName: "[project]/src/components/Header.js",
-                lineNumber: 26,
+                lineNumber: 34,
                 columnNumber: 7
             }, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "a79e3801ef5ff26d",
-                children: '.logo-text.jsx-944c688d78ff533b{letter-spacing:.05em;background:linear-gradient(135deg,#966f33 0%,#b8860b 15%,#d4af37 30%,#e6be8a 45%,#d4af37 60%,#b8860b 75%,#966f33 100%) 0 0/200%;-webkit-text-fill-color:transparent;text-shadow:0 0 1px #966f334d,0 0 2px #966f331a;background-clip:text;font-size:1.8rem;font-weight:700;animation:10s infinite goldFlow;position:relative}.logo-text.jsx-944c688d78ff533b:after{content:"";background:linear-gradient(45deg,#0000 0%,#ffffff0d 25%,#0000 50%,#ffffff0d 75%,#0000 100%) 0 0/200%;pointer-events:none;background-clip:text;animation:5s linear infinite shimmerEffect;position:absolute;inset:0}@keyframes goldFlow{0%{background-position:0%}50%{background-position:100%}to{background-position:0%}}@keyframes shimmerEffect{0%{background-position:-200%}to{background-position:200%}}@media (width<=768px){.logo-text.jsx-944c688d78ff533b{font-size:1.4rem}}'
+                id: "c9554210d0e56e1c",
+                children: '.logo-text.jsx-7dca69f00ab4613d{letter-spacing:.05em;background:linear-gradient(135deg,#966f33 0%,#b8860b 15%,#d4af37 30%,#e6be8a 45%,#d4af37 60%,#b8860b 75%,#966f33 100%) 0 0/200%;-webkit-text-fill-color:transparent;text-shadow:0 0 1px #966f334d,0 0 2px #966f331a;background-clip:text;font-size:1.8rem;font-weight:700;animation:10s infinite goldFlow;position:relative}.logo-text.jsx-7dca69f00ab4613d:after{content:"";background:linear-gradient(45deg,#0000 0%,#ffffff0d 25%,#0000 50%,#ffffff0d 75%,#0000 100%) 0 0/200%;pointer-events:none;background-clip:text;animation:5s linear infinite shimmerEffect;position:absolute;inset:0}@keyframes goldFlow{0%{background-position:0%}50%{background-position:100%}to{background-position:0%}}@keyframes shimmerEffect{0%{background-position:-200%}to{background-position:200%}}@media (width<=768px){.logo-text.jsx-7dca69f00ab4613d{font-size:1.2rem}}'
             }, void 0, false, void 0, this),
             /*#__PURE__*/ (0, __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$dist$2f$compiled$2f$react$2f$jsx$2d$dev$2d$runtime$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["jsxDEV"])(__TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$styled$2d$jsx$2f$style$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["default"], {
-                id: "95a98d16b025f871",
-                children: '.custom-nav-link{color:#fff;letter-spacing:.05em;padding:.5rem 1rem;font-weight:500;text-decoration:none;transition:color .3s;display:block;position:relative}.custom-nav-link:hover{color:#e6be8a}.custom-nav-link:focus{color:#e6be8a;outline:none}.custom-nav-link:after{content:"";opacity:0;background:linear-gradient(90deg,#b8860b,#d4af37);width:0;height:2px;transition:all .3s;position:absolute;bottom:0;left:50%;transform:translate(-50%)}.custom-nav-link:hover:after,.active-nav-link:after,.custom-nav-link:focus:after{opacity:1;width:80%}.custom-nav-link:focus-visible{border-radius:3px;box-shadow:0 0 0 2px #d4af3780}.active-nav-link{color:#d4af37!important}@media (width<=768px){.custom-nav-link:after{bottom:-3px}}'
+                id: "ad216d8c23272e63",
+                children: '.custom-nav-link{color:#fff;letter-spacing:.05em;padding:.5rem 1rem;font-weight:500;text-decoration:none;transition:color .3s;display:block;position:relative}.custom-nav-link:hover{color:#e6be8a}.custom-nav-link:focus{color:#e6be8a;outline:none}.custom-nav-link:after{content:"";opacity:0;background:linear-gradient(90deg,#b8860b,#d4af37);width:0;height:2px;transition:all .3s;position:absolute;bottom:0;left:50%;transform:translate(-50%)}.custom-nav-link:hover:after,.active-nav-link:after,.custom-nav-link:focus:after{opacity:1;width:80%}.custom-nav-link:focus-visible{border-radius:3px;box-shadow:0 0 0 2px #d4af3780}.active-nav-link{color:#d4af37!important}@media (width<=768px){.navbar{padding-top:.5rem;padding-bottom:.5rem}.navbar-brand{padding-top:.25rem;padding-bottom:.25rem}.custom-nav-link{border-bottom:1px solid #d4af371a;padding:.75rem 1rem}.custom-nav-link:after{bottom:-3px}.navbar-toggler{border:1px solid #d4af3780;padding:.25rem .5rem}}'
             }, void 0, false, void 0, this)
         ]
     }, void 0, true, {
         fileName: "[project]/src/components/Header.js",
-        lineNumber: 25,
+        lineNumber: 33,
         columnNumber: 5
     }, this);
 }
-_s(Header, "qIOWh+H4KANmZw/Ng5wnr7tzXF0=", false, function() {
+_s(Header, "PIjYoFL2Gflu8ZViwGA+TieMdPg=", false, function() {
     return [
         __TURBOPACK__imported__module__$5b$project$5d2f$node_modules$2f$next$2f$navigation$2e$js__$5b$app$2d$client$5d$__$28$ecmascript$29$__["usePathname"]
     ];

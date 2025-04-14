@@ -1,13 +1,12 @@
 // src/app/layout.js
 import './globals.css'
-import { Inter } from 'next/font/google'
 import Script from 'next/script'
 import 'bootstrap-icons/font/bootstrap-icons.css'
 import Header from '@/components/Header'
 import Footer from '@/components/Footer'
 import ClientScripts from '@/components/ClientScripts'
+import { Inter, Cinzel, Playfair_Display,  Libre_Baskerville } from 'next/font/google'
 
-const inter = Inter({ subsets: ['latin'] })
 
 export const metadata = {
   title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
@@ -15,9 +14,23 @@ export const metadata = {
   keywords: 'Ärztevermittlung, Pflegekräfte, Pflegevermittlung, medizinisches Fachpersonal, Gesundheitspersonal, Berlin',
 }
 
+const inter = Inter({ subsets: ['latin'] })
+const cinzel = Cinzel({ 
+  subsets: ['latin'],
+  weight: ['400', '500', '600', '700'],
+  variable: '--font-cinzel',
+})
+const playfair = Playfair_Display({ subsets: ['latin'], variable: '--font-playfair' })
+const baskerville = Libre_Baskerville({ subsets: ['latin'], weight: ['400', '700'], variable: '--font-baskerville' })
+
 export default function RootLayout({ children }) {
   return (
-    <html lang="de">
+    <html lang="de" className={`
+      ${inter.variable} 
+      ${cinzel.variable} 
+      ${playfair.variable} 
+      ${baskerville.variable}
+    `}>
       <body className={inter.className}>
         <Header />
         <main>
