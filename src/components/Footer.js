@@ -7,7 +7,7 @@ export default function Footer() {
         <div className="row">
           <div className="col-md-6 mb-4 mb-md-0">
             <h5 className="text-gold mb-3" itemProp="name">BLACK FORGE CONSULTING</h5>
-            <p itemProp="description">Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal für Ihre individuellen Bedürfnisse.</p>
+            <p itemProp="description">Professionelle Personalvermittlung und strategische Unternehmensberatung für Ihren nachhaltigen Geschäftserfolg.</p>
           </div>
           <div className="col-md-6">
             <h5 className="text-gold mb-3">Kontakt</h5>
@@ -15,10 +15,10 @@ export default function Footer() {
             <p><span className="fw-bold">Telefon:</span> <a href="tel:+4912345678901" className="text-white" itemProp="telephone">+49 123 4567890</a></p>
             <div itemProp="address" itemScope itemType="http://schema.org/PostalAddress">
               <p>
-                <span className="fw-bold">Adresse:</span> 
-                <span itemProp="streetAddress">Musterstraße 123</span>, 
-                <span itemProp="postalCode">12345</span> 
-                <span itemProp="addressLocality">Berlin</span>
+                <span className="fw-bold">Adresse: </span> 
+                <span itemProp="streetAddress"> Bosewitzerstr. 11</span>, 
+                <span itemProp="postalCode"> 01259</span> 
+                <span itemProp="addressLocality"> Dresden</span>
               </p>
             </div>
           </div>

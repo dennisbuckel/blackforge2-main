@@ -54,7 +54,7 @@ export default function UberUns() {
           <div className="row align-items-center mb-5">
             <div className="col-lg-6 mb-4 mb-lg-0">
               <p className="mb-4">
-                Black Forge Consulting wurde 2015 mit dem Ziel gegründet, eine Lücke im Gesundheitsmarkt zu schließen. 
+                Black Forge Consulting wurde mit dem Ziel gegründet, eine Lücke im Gesundheitsmarkt zu schließen. 
                 Wir begannen als spezialisierter Vermittlungsdienst für medizinisches Fachpersonal, der sowohl 
                 die Bedürfnisse der Gesundheitseinrichtungen als auch die der medizinischen Fachkräfte 
                 in den Mittelpunkt stellte.

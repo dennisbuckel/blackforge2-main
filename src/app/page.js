@@ -1,60 +1,20 @@
+'use client'; // Markiere die gesamte Komponente als Client Component
+
 // src/app/page.js
 import Link from 'next/link';
-import styles from './home.module.css';
 import Image from 'next/image';
+import dynamic from 'next/dynamic';
 
-export const metadata = {
-  title: 'Black Forge Consulting | Premium Personalvermittlung & Unternehmensberatung',
-  description: 'Professionelle Vermittlung von qualifizierten Fachkräften und strategische Unternehmensberatung für Ihren nachhaltigen Erfolg.',
-}
+// Importiere den Wrapper für VideoHero (Client-Komponente) mit dynamic import
+const VideoHeroWrapper = dynamic(() => import('@/components/VideoHeroWrapper'), {
+  ssr: false, // Jetzt erlaubt, da wir in einer Client Component sind
+});
 
 export default function Home() {
   return (
     <>
-      {/* Full-Screen Video Hero Section - Optimiert für Mobile */}
-      <section className={styles.fullScreenHero}>
-        {/* Video Container */}
-        <div className={styles.videoContainer}>
-          <video 
-            className={styles.backgroundVideo} 
-            autoPlay 
-            loop 
-            muted 
-            playsInline
-          >
-            <source src="/videos/hero-background.mp4" type="video/mp4" />
-          </video>
-          
-          {/* Overlay für bessere Lesbarkeit */}
-          <div className={styles.videoOverlay}></div>
-        </div>
-
-        {/* Hero Content - Optimiert für Mobile */}
-        <div className={styles.heroContent}>
-          <div className="container">
-            <div className="row">
-              <div className="col-lg-7 col-md-10 col-12 mx-auto mx-lg-0">
-                <h1 className="display-4 fw-bold mb-4 text-white">
-                  Maßgeschneiderte Lösungen für Ihren Erfolg
-                </h1>
-                <p className="lead mb-4 text-white">
-                  Personalvermittlung & Unternehmensberatung aus einer Hand
-                </p>
-                <div className="d-grid d-md-block">
-                  <Link href="/kontakt" className="btn btn-gold px-4 py-2">
-                    KONTAKT AUFNEHMEN
-                  </Link>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-        
-        {/* Scroll-Down-Indikator */}
-        <div className={styles.scrollDownIndicator} id="scroll-indicator">
-          <i className="bi bi-chevron-down"></i>
-        </div>
-      </section>
+      {/* Verwende den VideoHeroWrapper anstelle des direkten Video-Codes */}
+      <VideoHeroWrapper />
   
       {/* Services Section - Optimiert für Mobile */}
       <section className="py-5 bg-dark">
@@ -71,7 +31,7 @@ export default function Home() {
                   <div className="card-body text-center p-3 p-md-4">
                     <h3 className="text-gold mb-3">Unternehmensberatung</h3>
                     <p className="text-white">
-                      Strategische Beratung und individuelle Lösungskonzepte für Ihren nachhaltigen Erfolg
+                      Strategische Beratung für Mitarbeitergewinnung, Mitarbeiterbindung und nachhaltige Umsatzsteigerung
                     </p>
                   </div>
                 </div>
@@ -92,14 +52,14 @@ export default function Home() {
               </Link>
             </div>
             
-            {/* Service 3 - Rundumbetreuung */}
+            {/* Service 3 - M&A statt Rundumbetreuung */}
             <div className="col-md-4">
-              <Link href="/leistungen#rundumbetreuung" className="text-decoration-none">
+              <Link href="/leistungen#munda" className="text-decoration-none">
                 <div className="card bg-black-custom h-100 service-card">
                   <div className="card-body text-center p-3 p-md-4">
-                    <h3 className="text-gold mb-3">Rundumbetreuung</h3>
+                    <h3 className="text-gold mb-3">M&A</h3>
                     <p className="text-white">
-                      Umfassende administrative, rechtliche und strategische Unterstützung
+                      Professionelle Begleitung bei Unternehmenskäufen, -verkäufen und Nachfolgeregelungen
                     </p>
                   </div>
                 </div>

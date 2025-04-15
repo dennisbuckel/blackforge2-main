@@ -23,13 +23,14 @@ export default function Leistungen() {
               <div className="card-body">
                 <p className="mb-4">
                   Wir bieten maßgeschneiderte Beratungsleistungen, die Ihr Unternehmen strategisch voranbringen.
-                  Mit unserem Expertenwissen unterstützen wir Sie bei der Optimierung Ihrer Geschäftsprozesse und der Erreichung Ihrer Unternehmensziele.
+                  Mit unserem Expertenwissen unterstützen wir Sie bei der Optimierung Ihrer Geschäftsprozesse,
+                  der gezielten Mitarbeitergewinnung und -bindung sowie der nachhaltigen Steigerung Ihres Umsatzes.
                 </p>
                 {/* Verbesserte Liste mit feature-list-icon-Klasse */}
                 <ul className="feature-list-icon mb-0">
-                  <li>Strategische Geschäftsentwicklung</li>
-                  <li>Prozessoptimierung und Effizienzsteigerung</li>
-                  <li>Marktanalysen und Wettbewerbsstrategien</li>
+                  <li>Strategische Mitarbeitergewinnung und Employer Branding</li>
+                  <li>Maßnahmen zur Steigerung der Mitarbeiterbindung und -zufriedenheit</li>
+                  <li>Umsatzsteigerung durch optimierte Verkaufsprozesse und Kundenbeziehungen</li>
                   <li>Change Management und Organisationsentwicklung</li>
                 </ul>
               </div>
@@ -56,20 +57,20 @@ export default function Leistungen() {
             </div>
           </div>
           
-          <div className="mb-5" id="rundumbetreuung">
-            <h2 className="h2 text-gold mb-4">Rundumbetreuung</h2>
+          <div className="mb-5" id="munda">
+            <h2 className="h2 text-gold mb-4">M&A / Unternehmensnachfolge</h2>
             <div className="card bg-black-custom p-4">
               <div className="card-body">
                 <p className="mb-4">
-                  Wir bieten umfassende administrative und rechtliche Unterstützung, damit Sie sich 
-                  auf Ihr Kerngeschäft konzentrieren können.
+                  Wir begleiten Sie professionell bei Unternehmenskäufen, -verkäufen und der Regelung Ihrer Unternehmensnachfolge.
+                  Unsere erfahrenen Experten unterstützen Sie bei allen relevanten Prozessen und sorgen für eine erfolgreiche Transaktion.
                 </p>
                 {/* Verbesserte Liste mit feature-list-icon-Klasse */}
                 <ul className="feature-list-icon mb-0">
-                  <li>Administrative Unterstützung und Dokumentenmanagement</li>
-                  <li>Rechtliche Beratung und Vertragsgestaltung</li>
-                  <li>Projektmanagement und -koordination</li>
-                  <li>Kontinuierliche Betreuung und Qualitätssicherung</li>
+                  <li>Strategische Beratung bei Unternehmenskäufen und -verkäufen</li>
+                  <li>Professionelle Begleitung bei der Unternehmensnachfolge</li>
+                  <li>Due Diligence und Unternehmensbewertung</li>
+                  <li>Verhandlungsführung und Vertragsgestaltung</li>
                 </ul>
               </div>
             </div>
@@ -238,7 +239,7 @@ export default function Leistungen() {
               </h2>
               <div id="faq1" className="accordion-collapse collapse" data-bs-parent="#faqAccordion">
                 <div className="accordion-body">
-                  Wir bieten unsere Dienstleistungen für eine Vielzahl von Branchen an, darunter Gesundheitswesen, IT, Finanzen, Produktion und Dienstleistungssektor. Unsere Expertise im Gesundheitsbereich ist besonders ausgeprägt, aber wir haben unser Angebot erfolgreich auf weitere Sektoren ausgeweitet. Unsere Beratungs- und Vermittlungsansätze werden individuell an die spezifischen Anforderungen und Herausforderungen Ihrer Branche angepasst.
+                  Wir bieten unsere Dienstleistungen branchenübergreifend an und passen unsere Lösungen individuell an die spezifischen Anforderungen Ihres Unternehmens an. Unsere flexible Methodik und die vielseitige Expertise unseres Teams ermöglichen es uns, in verschiedensten Wirtschaftsbereichen erfolgreich zu agieren. Wir analysieren die spezifischen Herausforderungen Ihrer Branche und entwickeln passgenaue Strategien, die Ihren Unternehmenserfolg nachhaltig fördern.
                 </div>
               </div>
             </div>

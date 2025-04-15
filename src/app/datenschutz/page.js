@@ -19,8 +19,8 @@ export const metadata = {
               </p>
               <address className="mb-3">
                 Black Forge Consulting GmbH<br />
-                Musterstraße 123<br />
-                12345 Berlin<br />
+                    Dosewitzerstr. 11<br/>
+                    01259 Dresden<br/>
                 Deutschland<br /><br />
                 Telefon: +49 123 4567890<br />
                 E-Mail: info@blackforge-consulting.de
