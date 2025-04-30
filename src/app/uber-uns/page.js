@@ -20,7 +20,7 @@ export default function UberUns() {
             <div className="col-lg-6 order-lg-2 mb-4 mb-lg-0">
               <p className="mb-4">
                 Unsere Mission ist es, eine Brücke zwischen qualifizierten Fachkräften und 
-                Unternehmen zu schlagen, die ihre Ziele effektiv erreichen möchten. 
+                Unternehmen zu schmieden, die ihre Ziele effektiv erreichen möchten. 
                 Wir glauben, dass jedes Unternehmen Zugang zu erstklassigem Personal und fundierter 
                 strategischer Beratung haben sollte, die auf die individuellen Anforderungen zugeschnitten ist.
               </p>

@@ -47,6 +47,15 @@
   opacity: 0; /* Initial versteckt, wird durch fadeIn Klasse sichtbar */
 }
 
+/* Verstecktes Video für Preloading */
+.hiddenVideo {
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
 /* Fallback-Bild während des Video-Ladens */
 .fallbackImage {
   position: absolute;
@@ -65,12 +74,14 @@
 /* Fade-Animationen für Video und Fallback-Bild */
 .fadeIn {
   opacity: 1;
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
+  z-index: 1;
 }
 
 .fadeOut {
   opacity: 0;
-  transition: opacity 1s ease;
+  transition: opacity 0.5s ease;
+  z-index: 0;
 }
 
 /* Video-Indikatoren */

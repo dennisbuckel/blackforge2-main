@@ -84,7 +84,7 @@ export default function Home() {
                 <span className="pb-2 border-bottom border-gold">ÜBER UNS</span>
               </h2>
               <p className="mb-4">
-                Black Forge Consulting ist Ihr zuverlässiger Partner für Personalvermittlung und strategische Unternehmensberatung. 
+                Black Forge Consulting ist Ihr zuverlässiger Partner für Unternehmensberatung und Personalvermittlung. 
                 Wir verstehen die individuellen Bedürfnisse unserer Kunden aus verschiedenen Branchen und bieten maßgeschneiderte Lösungen, 
                 die Ihre Unternehmensziele optimal unterstützen.
               </p>

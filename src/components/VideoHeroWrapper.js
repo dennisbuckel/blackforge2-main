@@ -2,7 +2,7 @@
 
 // src/components/VideoHeroWrapper.js
 import { useEffect, useState } from 'react';
-import VideoHero from './VideoHero';
+import EnhancedVideoHero from './EnhancedVideoHero';
 import styles from './videoHero.module.css'; // Wir importieren die Styles auch hier
 
 export default function VideoHeroWrapper() {
@@ -30,7 +30,7 @@ export default function VideoHeroWrapper() {
           <div className="row align-items-center">
             <div className="col-lg-7 mb-5 mb-lg-0">
               <h1 className="display-4 fw-bold mb-4 text-white">Maßgeschneiderte Lösungen für Ihren Unternehmenserfolg</h1>
-              <p className="lead mb-5 text-white">Expertise für Personalvermittlung, Strategieberatung und M&A-Lösungen</p>
+              <p className="lead mb-5 text-white">Expertise für Unternehmensberatung, Personalvermittlung, M&A-Lösungen</p>
               <div className="btn btn-gold btn-lg px-4 py-2">
                 KONTAKT AUFNEHMEN
               </div>
@@ -41,6 +41,6 @@ export default function VideoHeroWrapper() {
     );
   }
 
-  // Sobald die Komponente clientseitig gemounted ist, zeigen wir das Video-Hero
-  return <VideoHero />;
+  // Sobald die Komponente clientseitig gemounted ist, zeigen wir das verbesserte Video-Hero
+  return <EnhancedVideoHero />;
 }

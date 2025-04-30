@@ -19,7 +19,7 @@ export const metadata = {
               </p>
               <address className="mb-3">
                 Black Forge Consulting GmbH<br />
-                    Dosewitzerstr. 11<br/>
+                    Bosewitzerstr. 11<br/>
                     01259 Dresden<br/>
                 Deutschland<br /><br />
                 Telefon: +49 123 4567890<br />
@@ -99,9 +99,9 @@ export const metadata = {
               <address className="mb-3">
                 Black Forge Consulting GmbH<br />
                 - Datenschutzbeauftragter -<br />
-                Musterstraße 123<br />
-                12345 Berlin<br /><br />
-                E-Mail: datenschutz@blackforge-consulting.de
+                Bosewitzerstr. 11<br />
+                01259 Dresden<br /><br />
+                E-Mail: info@blackforge-consulting.de
               </address>
             </div>
           </div>

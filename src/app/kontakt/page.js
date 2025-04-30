@@ -32,7 +32,7 @@ export default function Kontakt() {
                   <h3 className="h5 text-gold mb-3">Adresse</h3>
                   <address className="mb-0 text-white">
                     Black Forge Consulting GmbH<br/>
-                    Dosewitzerstr. 11<br/>
+                    Bosewitzerstr. 11<br/>
                     01259 Dresden<br/>
                     Deutschland
                   </address>
@@ -43,13 +43,10 @@ export default function Kontakt() {
                 <div className="card-body">
                   <h3 className="h5 text-gold mb-3">Kontakt</h3>
                   <p className="mb-2 text-white">
-                    <strong>Telefon:</strong> <a href="tel:+4912345678901" className="text-white">+49 123 4567890</a>
+                    <strong>Telefon:</strong> <a href="tel:+49 1520 8694451" className="text-white">+49 1520 8694451</a>
                   </p>
                   <p className="mb-2 text-white">
                     <strong>E-Mail:</strong> <a href="mailto:info@blackforge-consulting.de" className="text-white">info@blackforge-consulting.de</a>
-                  </p>
-                  <p className="mb-0 text-white">
-                    <strong>Geschäftszeiten:</strong> Mo-Fr 8:00-17:00 Uhr
                   </p>
                 </div>
               </div>
