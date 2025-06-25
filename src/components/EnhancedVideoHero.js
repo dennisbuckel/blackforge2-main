@@ -12,14 +12,18 @@ export default function EnhancedVideoHero() {
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   
-  // Single combined video in different formats
+  // Multiple videos for rotation - using higher quality originals
   const videoSources = {
-    desktop: {
-      mp4: "/videos/optimized/hero-background-combined.mp4",
-      webm: "/videos/optimized/hero-background-combined.webm"
-    },
-    mobile: "/videos/optimized/hero-background-combined-mobile.mp4"
+    desktop: [
+      "/videos/hero-background.mp4",
+      "/videos/hero-background-2.mp4", 
+      "/videos/hero-background-3.mp4"
+    ],
+    mobile: "/videos/optimized/hero-background-combined-mobile.mp4" // Keep mobile optimized for performance
   };
+  
+  // State for current video index
+  const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   // Mobile device detection
   useEffect(() => {
@@ -47,34 +51,40 @@ export default function EnhancedVideoHero() {
       setIsVideoLoaded(true);
     };
     
+    const handleVideoEnded = () => {
+      if (!isMobile) {
+        // Switch to next video when current video ends
+        setCurrentVideoIndex((prevIndex) => 
+          (prevIndex + 1) % videoSources.desktop.length
+        );
+      }
+    };
+    
     video.addEventListener('canplay', handleCanPlay);
+    video.addEventListener('ended', handleVideoEnded);
     
     // If the video is already in cache and loads immediately
     if (video.readyState >= 3) {
       setIsVideoLoaded(true);
     }
     
-    // Make the video loop
-    video.loop = true;
+    // Don't loop individual videos - let them play once
+    video.loop = false;
     
     return () => {
       video.removeEventListener('canplay', handleCanPlay);
+      video.removeEventListener('ended', handleVideoEnded);
     };
-  }, []);
+  }, [isMobile, currentVideoIndex]);
 
-  // Get video sources based on device
-  const getVideoSources = () => {
+  // Get current video source
+  const getCurrentVideoSource = () => {
     if (isMobile) {
-      return {
-        mp4: videoSources.mobile
-      };
+      return videoSources.mobile;
     } else {
-      return videoSources.desktop;
+      return videoSources.desktop[currentVideoIndex];
     }
   };
-
-  // Current video sources
-  const currentVideoSources = getVideoSources();
 
   return (
     <section className={styles.videoHeroSection}>
@@ -90,17 +100,11 @@ export default function EnhancedVideoHero() {
           autoPlay 
           muted 
           playsInline
-          loop
           preload="auto"
+          key={getCurrentVideoSource()} // Force re-render when video changes
         >
-          {!isMobile && currentVideoSources.webm && (
-            <source 
-              src={currentVideoSources.webm} 
-              type="video/webm" 
-            />
-          )}
           <source 
-            src={currentVideoSources.mp4} 
+            src={getCurrentVideoSource()} 
             type="video/mp4" 
           />
           Ihr Browser unterstützt keine Video-Wiedergabe.
@@ -114,7 +118,10 @@ export default function EnhancedVideoHero() {
       <div className="container py-5 position-relative">
         <div className="row align-items-center">
           <div className="col-lg-7 mb-5 mb-lg-0">
-            <h1 className="display-4 fw-bold mb-4 text-white">Maßgeschneiderte Lösungen für Ihren Unternehmenserfolg</h1>
+            <h1 className={`${styles.heroTitle} fw-bold mb-4 text-white`}>
+              Die Unternehmensschmiede<br />
+              für Visionäre und Entscheider
+            </h1>
             <p className="lead mb-5 text-white">Expertise für Unternehmensberatung, Personalvermittlung, M&A-Lösungen</p>
             <Link href="/kontakt" className="btn btn-gold btn-lg px-4 py-2">
               KONTAKT AUFNEHMEN

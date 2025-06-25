@@ -31,7 +31,7 @@ export default function Leistungen() {
                   <li>Strategische Mitarbeitergewinnung und Employer Branding</li>
                   <li>Maßnahmen zur Steigerung der Mitarbeiterbindung und -zufriedenheit</li>
                   <li>Umsatzsteigerung durch optimierte Verkaufsprozesse und Kundenbeziehungen</li>
-                  <li>Change Management und Organisationsentwicklung</li>
+                  <li>Professionelle Erstellung und Optimierung von Webseiten für Ihren digitalen Erfolg</li>
                 </ul>
               </div>
             </div>

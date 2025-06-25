@@ -23,7 +23,7 @@ export default function Impressum() {
             
             <h3 className="h5 text-gold mt-4 mb-3">Vertreten durch:</h3>
             <p>
-              Dennis Müller<br />
+              Aric Schwarz<br />
               Geschäftsführer
             </p>
             

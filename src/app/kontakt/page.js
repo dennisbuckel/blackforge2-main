@@ -51,14 +51,6 @@ export default function Kontakt() {
                 </div>
               </div>
               
-              <div className="card bg-black-custom p-4">
-                <div className="card-body">
-                  <h3 className="h5 text-gold mb-3">Schnelle Reaktionszeiten</h3>
-                  <p className="mb-0 text-white">
-                    Wir legen Wert auf Ihre Zufriedenheit und garantieren eine Rückmeldung innerhalb eines Werktages.
-                  </p>
-                </div>
-              </div>
             </div>
           </div>
         </div>

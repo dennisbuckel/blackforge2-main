@@ -29,7 +29,10 @@ export default function VideoHeroWrapper() {
         <div className="container py-5 position-relative">
           <div className="row align-items-center">
             <div className="col-lg-7 mb-5 mb-lg-0">
-              <h1 className="display-4 fw-bold mb-4 text-white">Maßgeschneiderte Lösungen für Ihren Unternehmenserfolg</h1>
+              <h1 className={`${styles.heroTitle} fw-bold mb-4 text-white`}>
+                Die Unternehmensschmiede<br />
+                für Visionäre und Entscheider
+              </h1>
               <p className="lead mb-5 text-white">Expertise für Unternehmensberatung, Personalvermittlung, M&A-Lösungen</p>
               <div className="btn btn-gold btn-lg px-4 py-2">
                 KONTAKT AUFNEHMEN
