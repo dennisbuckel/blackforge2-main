@@ -2,7 +2,7 @@
 
 // src/components/VideoHeroWrapper.js
 import { useEffect, useState } from 'react';
-import EnhancedVideoHero from './EnhancedVideoHero';
+import SimpleVideoHero from './SimpleVideoHero';
 import styles from './videoHero.module.css'; // Wir importieren die Styles auch hier
 
 export default function VideoHeroWrapper() {
@@ -44,6 +44,6 @@ export default function VideoHeroWrapper() {
     );
   }
 
-  // Sobald die Komponente clientseitig gemounted ist, zeigen wir das verbesserte Video-Hero
-  return <EnhancedVideoHero />;
+  // Sobald die Komponente clientseitig gemounted ist, zeigen wir das einfache Video-Hero
+  return <SimpleVideoHero />;
 }

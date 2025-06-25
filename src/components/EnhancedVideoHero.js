@@ -5,12 +5,14 @@ import Link from 'next/link';
 import styles from './videoHero.module.css';
 
 export default function EnhancedVideoHero() {
-  // Reference for video element
-  const videoRef = useRef(null);
+  // References for two video elements for seamless switching
+  const video1Ref = useRef(null);
+  const video2Ref = useRef(null);
   
   // State management
   const [isVideoLoaded, setIsVideoLoaded] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
+  const [activeVideoIndex, setActiveVideoIndex] = useState(0); // Which video element is currently active (0 or 1)
   
   // Multiple videos for rotation - using higher quality originals
   const videoSources = {
@@ -22,7 +24,7 @@ export default function EnhancedVideoHero() {
     mobile: "/videos/optimized/hero-background-combined-mobile.mp4" // Keep mobile optimized for performance
   };
   
-  // State for current video index
+  // State for current video index in the playlist
   const [currentVideoIndex, setCurrentVideoIndex] = useState(0);
 
   // Mobile device detection
@@ -41,49 +43,96 @@ export default function EnhancedVideoHero() {
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
 
-  // Video load handler
+  // Video load and switching handler
   useEffect(() => {
-    if (!videoRef.current) return;
+    if (!video1Ref.current || !video2Ref.current) return;
     
-    const video = videoRef.current;
+    const video1 = video1Ref.current;
+    const video2 = video2Ref.current;
+    
+    // Get current active video and next video
+    const currentVideo = activeVideoIndex === 0 ? video1 : video2;
+    const nextVideo = activeVideoIndex === 0 ? video2 : video1;
     
     const handleCanPlay = () => {
       setIsVideoLoaded(true);
     };
     
-    const handleVideoEnded = () => {
-      if (!isMobile) {
-        // Switch to next video when current video ends
-        setCurrentVideoIndex((prevIndex) => 
-          (prevIndex + 1) % videoSources.desktop.length
-        );
+    // Switch videos before the current one ends to avoid freeze frame
+    const handleTimeUpdate = () => {
+      if (!isMobile && currentVideo.duration && currentVideo.currentTime) {
+        // Switch 1 second before the video ends to avoid any hanging
+        const timeLeft = currentVideo.duration - currentVideo.currentTime;
+        if (timeLeft <= 1.0 && timeLeft > 0.8) {
+          // Prepare next video
+          const nextVideoIndex = (currentVideoIndex + 1) % videoSources.desktop.length;
+          
+          // Only switch if next video is not already prepared
+          if (nextVideo.src !== videoSources.desktop[nextVideoIndex]) {
+            nextVideo.src = videoSources.desktop[nextVideoIndex];
+            nextVideo.load();
+            
+            // When next video is ready, switch to it immediately
+            const handleNextVideoReady = () => {
+              // Pause current video to prevent hanging
+              currentVideo.pause();
+              
+              setActiveVideoIndex(prev => prev === 0 ? 1 : 0);
+              setCurrentVideoIndex(nextVideoIndex);
+              nextVideo.currentTime = 0; // Ensure we start from beginning
+              
+              // Start next video immediately
+              const playPromise = nextVideo.play();
+              if (playPromise !== undefined) {
+                playPromise.catch(error => {
+                  console.log('Video play failed:', error);
+                });
+              }
+              
+              nextVideo.removeEventListener('canplay', handleNextVideoReady);
+            };
+            
+            nextVideo.addEventListener('canplay', handleNextVideoReady);
+          }
+        }
       }
     };
     
-    video.addEventListener('canplay', handleCanPlay);
-    video.addEventListener('ended', handleVideoEnded);
+    currentVideo.addEventListener('canplay', handleCanPlay);
+    currentVideo.addEventListener('timeupdate', handleTimeUpdate);
     
     // If the video is already in cache and loads immediately
-    if (video.readyState >= 3) {
+    if (currentVideo.readyState >= 3) {
       setIsVideoLoaded(true);
     }
     
     // Don't loop individual videos - let them play once
-    video.loop = false;
+    currentVideo.loop = false;
     
     return () => {
-      video.removeEventListener('canplay', handleCanPlay);
-      video.removeEventListener('ended', handleVideoEnded);
+      currentVideo.removeEventListener('canplay', handleCanPlay);
+      currentVideo.removeEventListener('timeupdate', handleTimeUpdate);
     };
-  }, [isMobile, currentVideoIndex]);
+  }, [isMobile, currentVideoIndex, activeVideoIndex]);
 
-  // Get current video source
-  const getCurrentVideoSource = () => {
-    if (isMobile) {
-      return videoSources.mobile;
-    } else {
-      return videoSources.desktop[currentVideoIndex];
+  // Initialize videos
+  useEffect(() => {
+    if (!video1Ref.current || !video2Ref.current || isMobile) return;
+    
+    const video1 = video1Ref.current;
+    const video2 = video2Ref.current;
+    
+    // Set initial sources
+    video1.src = videoSources.desktop[0];
+    if (videoSources.desktop.length > 1) {
+      video2.src = videoSources.desktop[1];
+      video2.load(); // Preload second video
     }
+  }, [isMobile]);
+
+  // Get current video source for mobile
+  const getCurrentVideoSource = () => {
+    return videoSources.mobile;
   };
 
   return (
@@ -93,22 +142,49 @@ export default function EnhancedVideoHero() {
         {/* Static background image as fallback and during loading */}
         <div className={`${styles.fallbackImage} ${isVideoLoaded ? styles.fadeOut : ''}`}></div>
         
-        {/* Video (visible) */}
-        <video 
-          ref={videoRef}
-          className={`${styles.backgroundVideo} ${isVideoLoaded ? styles.fadeIn : ''}`}
-          autoPlay 
-          muted 
-          playsInline
-          preload="auto"
-          key={getCurrentVideoSource()} // Force re-render when video changes
-        >
-          <source 
-            src={getCurrentVideoSource()} 
-            type="video/mp4" 
-          />
-          Ihr Browser unterstützt keine Video-Wiedergabe.
-        </video>
+        {/* Desktop: Two videos for seamless switching */}
+        {!isMobile && (
+          <>
+            <video 
+              ref={video1Ref}
+              className={`${styles.backgroundVideo} ${isVideoLoaded && activeVideoIndex === 0 ? styles.fadeIn : styles.fadeOut}`}
+              autoPlay 
+              muted 
+              playsInline
+              preload="auto"
+            >
+              Ihr Browser unterstützt keine Video-Wiedergabe.
+            </video>
+            
+            <video 
+              ref={video2Ref}
+              className={`${styles.backgroundVideo} ${isVideoLoaded && activeVideoIndex === 1 ? styles.fadeIn : styles.fadeOut}`}
+              muted 
+              playsInline
+              preload="auto"
+            >
+              Ihr Browser unterstützt keine Video-Wiedergabe.
+            </video>
+          </>
+        )}
+        
+        {/* Mobile: Single looped video */}
+        {isMobile && (
+          <video 
+            className={`${styles.backgroundVideo} ${isVideoLoaded ? styles.fadeIn : ''}`}
+            autoPlay 
+            muted 
+            playsInline
+            loop
+            preload="auto"
+          >
+            <source 
+              src={getCurrentVideoSource()} 
+              type="video/mp4" 
+            />
+            Ihr Browser unterstützt keine Video-Wiedergabe.
+          </video>
+        )}
         
         {/* Overlay to darken video for better text readability */}
         <div className={styles.videoOverlay}></div>
