@@ -33,7 +33,7 @@ export const metadata = {
           
           <div className="card bg-black-custom p-4 mb-4">
             <div className="card-body text-white">
-              <h2 className="h4 text-gold mb-4">2. Erhebung und Verarbeitung personenbezogener Daten im Kontaktformular</h2>
+              <h2 className="h4 text-gold mb-4">2. Kontaktformular und E-Mail-Versand</h2>
               <p>
                 Wenn Sie unser Kontaktformular nutzen, erheben wir folgende personenbezogene Daten von Ihnen:
               </p>
@@ -41,10 +41,15 @@ export const metadata = {
                 <li>Name</li>
                 <li>E-Mail-Adresse</li>
                 <li>Telefonnummer (optional)</li>
+                <li>Anfragetyp</li>
                 <li>Inhalt Ihrer Nachricht</li>
+                <li>Zeitpunkt der Anfrage</li>
               </ul>
               <p>
-                Die Verarbeitung dieser Daten erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO, sofern Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt oder zur Durchführung vorvertraglicher Maßnahmen erforderlich ist. In allen übrigen Fällen basiert die Verarbeitung auf unserem berechtigten Interesse an der effektiven Bearbeitung der an uns gerichteten Anfragen (Art. 6 Abs. 1 lit. f DSGVO) oder auf Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), sofern diese abgefragt wurde.
+                <strong>Verwendung von EmailJS:</strong> Für den Versand der Kontaktformular-Daten nutzen wir den Dienst EmailJS (EmailJS Ltd., Vereinigtes Königreich). Dabei werden Ihre Formulardaten über die EmailJS-Server an unsere E-Mail-Adresse weitergeleitet. EmailJS fungiert als Auftragsverarbeiter im Sinne der DSGVO. Weitere Informationen finden Sie in der Datenschutzerklärung von EmailJS: <a href="https://www.emailjs.com/legal/privacy-policy/" className="text-gold" target="_blank" rel="noopener noreferrer">https://www.emailjs.com/legal/privacy-policy/</a>
+              </p>
+              <p>
+                Die Verarbeitung dieser Daten erfolgt auf Grundlage Ihrer Einwilligung (Art. 6 Abs. 1 lit. a DSGVO), die Sie durch das Aktivieren der Checkbox im Kontaktformular erteilen. In Fällen, in denen Ihre Anfrage mit der Erfüllung eines Vertrags zusammenhängt, erfolgt die Verarbeitung auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO.
               </p>
               <p>
                 Die von Ihnen im Kontaktformular eingegebenen Daten verbleiben bei uns, bis Sie uns zur Löschung auffordern, Ihre Einwilligung zur Speicherung widerrufen oder der Zweck für die Datenspeicherung entfällt (z.B. nach abgeschlossener Bearbeitung Ihrer Anfrage). Zwingende gesetzliche Bestimmungen – insbesondere Aufbewahrungsfristen – bleiben unberührt.
@@ -54,7 +59,30 @@ export const metadata = {
           
           <div className="card bg-black-custom p-4 mb-4">
             <div className="card-body text-white">
-              <h2 className="h4 text-gold mb-4">3. Zweck der Datenverarbeitung</h2>
+              <h2 className="h4 text-gold mb-4">3. Externe Inhalte und Dienste</h2>
+              <h3 className="h5 text-gold mb-3">Bootstrap CDN</h3>
+              <p>
+                Wir nutzen Bootstrap-JavaScript-Bibliotheken, die über das Content Delivery Network (CDN) von jsDelivr geladen werden. Dabei kann Ihre IP-Adresse an die Server von jsDelivr übertragen werden. jsDelivr ist ein Dienst der Prospect One Ltd. (Polen).
+              </p>
+              <p>
+                Die Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Optimierung der Website).
+              </p>
+              
+              <h3 className="h5 text-gold mb-3 mt-4">Lokale Schriftarten</h3>
+              <p>
+                Wir verwenden ausschließlich lokal gehostete Schriftarten. Es werden keine Daten an externe Anbieter wie Google Fonts übertragen.
+              </p>
+              
+              <h3 className="h5 text-gold mb-3 mt-4">Hosting</h3>
+              <p>
+                Diese Website wird über Vercel Inc. (USA) gehostet. Vercel kann dabei technische Daten wie Ihre IP-Adresse verarbeiten. Weitere Informationen finden Sie in der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy-policy" className="text-gold" target="_blank" rel="noopener noreferrer">https://vercel.com/legal/privacy-policy</a>
+              </p>
+            </div>
+          </div>
+          
+          <div className="card bg-black-custom p-4 mb-4">
+            <div className="card-body text-white">
+              <h2 className="h4 text-gold mb-4">4. Zweck der Datenverarbeitung</h2>
               <p>
                 Die von Ihnen übermittelten Daten verwenden wir ausschließlich, um:
               </p>
@@ -72,7 +100,7 @@ export const metadata = {
           
           <div className="card bg-black-custom p-4 mb-4">
             <div className="card-body text-white">
-              <h2 className="h4 text-gold mb-4">4. Ihre Rechte</h2>
+              <h2 className="h4 text-gold mb-4">5. Ihre Rechte</h2>
               <p>
                 Sie haben jederzeit das Recht:
               </p>
@@ -92,7 +120,7 @@ export const metadata = {
           
           <div className="card bg-black-custom p-4 mb-4">
             <div className="card-body text-white">
-              <h2 className="h4 text-gold mb-4">5. Datenschutzbeauftragter</h2>
+              <h2 className="h4 text-gold mb-4">6. Datenschutzbeauftragter</h2>
               <p>
                 Bei Fragen zum Datenschutz können Sie sich an unseren Datenschutzbeauftragten wenden:
               </p>
@@ -108,7 +136,7 @@ export const metadata = {
           
           <div className="card bg-black-custom p-4">
             <div className="card-body text-white">
-              <h2 className="h4 text-gold mb-4">6. Aktualität und Änderung dieser Datenschutzerklärung</h2>
+              <h2 className="h4 text-gold mb-4">7. Aktualität und Änderung dieser Datenschutzerklärung</h2>
               <p>
                 Diese Datenschutzerklärung ist aktuell gültig und hat den Stand April 2025.
               </p>
