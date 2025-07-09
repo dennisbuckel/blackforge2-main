@@ -1,0 +1,182 @@
+/* src/components/VideoHero.module.css */
+
+/* Haupt-Containerstil für die Hero-Sektion */
+.videoHeroSection {
+  position: relative;
+  height: 100vh; /* Volle Viewport-Höhe */
+  min-height: 600px; /* Minimale Höhe für kleinere Bildschirme */
+  width: 100%;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  color: white;
+  z-index: 1;
+  padding-top: 56px; /* Standardhöhe der Navigation berücksichtigen */
+}
+
+/* Container für das Videoelement */
+.videoContainer {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+}
+
+/* Overlay, um das Video abzudunkeln und Text besser lesbar zu machen */
+.videoOverlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 17, 17, 0.7); /* var(--bf-black) mit Transparenz */
+  z-index: 1;
+}
+
+/* Stil für das Video selbst */
+.backgroundVideo {
+  width: 125%; /* Stärker vergrößert um Wasserzeichen zu verstecken */
+  height: 125%; /* Stärker vergrößert um Wasserzeichen zu verstecken */
+  object-fit: cover; /* Wichtig: Behält das Seitenverhältnis bei und füllt den Container */
+  position: absolute;
+  top: -12.5%; /* Stärker nach oben verschoben */
+  left: -12.5%; /* Stärker nach links verschoben */
+  z-index: 0;
+  opacity: 0; /* Initial versteckt, wird durch fadeIn Klasse sichtbar */
+}
+
+/* Verstecktes Video für Preloading */
+.hiddenVideo {
+  display: none;
+  width: 0;
+  height: 0;
+  position: absolute;
+  visibility: hidden;
+}
+
+/* Fallback-Bild während des Video-Ladens */
+.fallbackImage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('/images/hero-fallback.jpg'); /* Stelle sicher, dass dieses Bild existiert */
+  background-size: cover;
+  background-position: center;
+  background-color: #111111; /* Fallback, falls das Bild nicht geladen wird */
+  z-index: 0;
+  transition: opacity 0.5s ease;
+}
+
+/* Fade-Animationen für Video und Fallback-Bild */
+.fadeIn {
+  opacity: 1;
+  transition: opacity 0.5s ease;
+  z-index: 1;
+}
+
+.fadeOut {
+  opacity: 0;
+  transition: opacity 0.5s ease;
+  z-index: 0;
+}
+
+/* Video-Indikatoren */
+.videoIndicators {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.indicator {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.5);
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.activeIndicator {
+  background-color: var(--bf-gold);
+  transform: scale(1.2);
+}
+
+/* Hero-Text Styling für bessere Zeilenumbrüche */
+.heroTitle {
+  line-height: 1.2;
+  word-spacing: normal;
+  letter-spacing: normal;
+}
+
+/* Responsive Anpassungen */
+@media (max-width: 767.98px) {
+  .videoHeroSection {
+    height: 80vh; /* Etwas kürzer auf mobilen Geräten */
+    min-height: 500px;
+  }
+  
+  .videoIndicators {
+    bottom: 20px;
+  }
+  
+  .indicator {
+    width: 8px;
+    height: 8px;
+  }
+  
+  /* Bessere Textaufteilung auf mobilen Geräten */
+  .heroTitle {
+    font-size: 1.6rem !important;
+    line-height: 1.3;
+  }
+}
+
+/* Mittlere Bildschirme - bessere Textaufteilung */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .heroTitle {
+    font-size: 2.4rem;
+    line-height: 1.25;
+  }
+}
+
+/* Große Bildschirme */
+@media (min-width: 992px) {
+  .heroTitle {
+    font-size: 3.2rem;
+    line-height: 1.2;
+  }
+}
+
+/* Mittlere Bildschirme */
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .videoHeroSection {
+    height: 90vh;
+  }
+}
+
+/* Größere Bildschirme */
+@media (min-width: 992px) {
+  .videoHeroSection {
+    padding-top: 76px; /* Höhere Navigation auf größeren Bildschirmen berücksichtigen */
+  }
+}
+
+/* Optimierung für Mobilgeräte in Landscape-Modus */
+@media (max-height: 500px) and (orientation: landscape) {
+  .videoHeroSection {
+    height: auto;
+    padding: 100px 0;
+  }
+  
+  .videoIndicators {
+    bottom: 10px;
+  }
+}

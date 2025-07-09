@@ -1,0 +1,206 @@
+/* src/app/home.module.css */
+
+/* Full-Screen Hero Sektion im Luxus-Stil */
+/* Full-Screen Hero Sektion im Luxus-Stil */
+.fullScreenHero {
+  height: 100vh; /* 100% der Viewport-Höhe */
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+}
+  
+  /* Video Container mit präziser Positionierung */
+  .videoContainer {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+  }
+  
+  /* Video selbst mit perfekter Abdeckung */
+  .backgroundVideo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Schlüsseleigenschaft für vollständige Abdeckung */
+    position: absolute;
+    top: 0;
+    left: 0;
+  }
+  
+  /* Eleganter Overlay-Effekt mit Farbverlauf */
+  .videoOverlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Eleganter Farbverlauf wie bei Luxusmarken */
+    background: linear-gradient(
+      0deg,
+      rgba(17, 17, 17, 0.9) 0%,    /* Stark abgedunkelt unten */
+      rgba(17, 17, 17, 0.6) 40%,   /* Mittel abgedunkelt in der Mitte */
+      rgba(17, 17, 17, 0.4) 80%,   /* Leicht abgedunkelt oben */
+      rgba(17, 17, 17, 0.6) 100%   /* Mittel abgedunkelt ganz oben (für Navbar) */
+    );
+  }
+  
+  /* Hero Content mit optimaler Positionierung */
+  .heroContent {
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    padding-top: 0; /* Kein zusätzliches Padding, da der Container bereits zentriert ist */
+  }
+  
+  /* Verbesserte Textlesbarkeit */
+  .heroContent h1 {
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.5px; /* Leicht vergrößerter Zeichenabstand für Premium-Look */
+    font-weight: 600; /* Etwas fetter für bessere Lesbarkeit */
+  }
+  
+  .heroContent p {
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    letter-spacing: 0.3px; /* Subtil verbesserter Zeichenabstand */
+  }
+  
+  /* Scroll-Down-Indikator mit sanfter Animation */
+  .scrollDownIndicator {
+    position: absolute;
+    bottom: 30px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    transition: opacity 0.3s ease;
+  }
+  
+  .scrollDownIndicator i {
+    color: var(--bf-gold);
+    font-size: 2rem;
+    opacity: 0.8;
+    animation: pulseDown 2s infinite;
+  }
+  
+  /* Subtile Puls-Animation für den Scroll-Indikator */
+  @keyframes pulseDown {
+    0%, 100% {
+      transform: translateY(0);
+      opacity: 0.6;
+    }
+    50% {
+      transform: translateY(8px);
+      opacity: 1;
+    }
+  }
+  
+  /* Media Queries für verschiedene Geräte */
+  @media (max-width: 768px) {
+    .heroContent {
+      padding-left: 15px;
+      padding-right: 15px;
+      text-align: center; /* Auf kleinen Geräten zentrieren */
+    }
+    
+    .scrollDownIndicator {
+      bottom: 20px;
+    }
+    
+    .heroContent h1 {
+      font-size: 2.5rem; /* Kleinere Überschrift auf mobilen Geräten */
+    }
+  }
+  
+  /* Für sehr hohe Bildschirme optimieren */
+  @media (min-height: 1000px) {
+    .fullScreenHero {
+      height: 90vh; /* Etwas kleiner für sehr hohe Bildschirme */
+    }
+  }
+  
+  /* Für kleine Bildschirme in Landscape-Ausrichtung */
+  @media (max-height: 500px) and (orientation: landscape) {
+    .fullScreenHero {
+      height: 100vh;
+    }
+    
+    .heroContent {
+      padding-top: 60px; /* Mehr Abstand oben für niedrige Bildschirme */
+    }
+    
+    .heroContent h1 {
+      font-size: 2rem; /* Noch kleinere Überschrift */
+    }
+  }
+  /* Anpassung der Hero-Sektion für mobile Geräte */
+@media (max-width: 767.98px) {
+  .fullScreenHero {
+    height: 90vh; /* Etwas kleiner für mobile Geräte */
+  }
+  
+  .heroContent {
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: center;
+  }
+  
+  .heroContent h1 {
+    font-size: 2rem !important;
+    padding-top: 80px; /* Mehr Platz nach oben */
+    word-wrap: break-word;
+    hyphens: auto;
+  }
+  
+  .heroContent p {
+    font-size: 1rem !important;
+  }
+  
+  /* Anpassung der Scroll-Indikator-Position */
+  .scrollDownIndicator {
+    bottom: 15px;
+  }
+}
+
+/* Änderungen für Header.js */
+
+/* Verbesserter Logo-Text in der mobilen Navigation */
+@media (max-width: 767.98px) {
+  /* Verkleinere das Logo signifikant für mobile Geräte */
+  .logo-text {
+    font-size: 1rem !important;
+    letter-spacing: 0.03em;
+  }
+  
+  /* Kleineres Logo-Bild */
+  .navbar-brand img {
+    width: 40px !important;
+    height: 40px !important;
+  }
+  
+  /* Bessere Positionierung des Toggle-Buttons */
+  .navbar-toggler {
+    padding: 0.25rem 0.5rem;
+    font-size: 0.85rem;
+  }
+  
+  /* Mehr Platz für die Navigation auf mobilen Geräten */
+  .navbar-collapse {
+    margin-top: 0.75rem;
+  }
+  
+  /* Verbesserte Sichtbarkeit der Navigationspunkte */
+  .custom-nav-link {
+    padding: 0.75rem 1rem;
+    border-bottom: 1px solid rgba(212, 175, 55, 0.1);
+  }
+}
