@@ -503,8 +503,4 @@ a {
   animation: arrow-pulse 1.5s ease infinite;
 }
 
-.font-cinzel {
-  font-family: var(--font-cinzel);
-}
-.font-playfair { font-family: var(--font-playfair); }
-.font-baskerville { font-family: var(--font-baskerville); }
+/* Font-Klassen werden jetzt aus fonts.css geladen */
