@@ -22,7 +22,7 @@ export const metadata = {
                     Bosewitzerstr. 11<br/>
                     01259 Dresden<br/>
                 Deutschland<br /><br />
-                Telefon: +49 123 4567890<br />
+                Telefon: +49 1520 8694451<br />
                 E-Mail: info@blackforge-consulting.de
               </address>
               <p>

@@ -37,14 +37,9 @@ export default function Impressum() {
             <p>
               Eintragung im Handelsregister.<br />
               Registergericht: Amtsgericht Dresden<br />
-              Registernummer: HRB 12345
+              Registernummer: HRB 46816
             </p>
             
-            <h3 className="h5 text-gold mt-4 mb-3">Umsatzsteuer-ID:</h3>
-            <p>
-              Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz:<br />
-              DE123456789
-            </p>
           </div>
         </div>
         
