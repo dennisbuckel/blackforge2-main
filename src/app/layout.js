@@ -16,6 +16,11 @@ export const metadata = {
   creator: 'Black Forge Consulting',
   publisher: 'Black Forge Consulting',
   robots: 'index, follow',
+  icons: {
+    icon: '/logo.svg',
+    shortcut: '/logo.svg',
+    apple: '/logo.svg',
+  },
   openGraph: {
     title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
     description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal für Ihre individuellen Bedürfnisse',
