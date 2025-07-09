@@ -60,12 +60,9 @@ export const metadata = {
           <div className="card bg-black-custom p-4 mb-4">
             <div className="card-body text-white">
               <h2 className="h4 text-gold mb-4">3. Externe Inhalte und Dienste</h2>
-              <h3 className="h5 text-gold mb-3">Bootstrap CDN</h3>
+              <h3 className="h5 text-gold mb-3">JavaScript-Bibliotheken</h3>
               <p>
-                Wir nutzen Bootstrap-JavaScript-Bibliotheken, die über das Content Delivery Network (CDN) von jsDelivr geladen werden. Dabei kann Ihre IP-Adresse an die Server von jsDelivr übertragen werden. jsDelivr ist ein Dienst der Prospect One Ltd. (Polen).
-              </p>
-              <p>
-                Die Rechtsgrundlage für diese Verarbeitung ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der technischen Optimierung der Website).
+                Wir verwenden Bootstrap-JavaScript-Bibliotheken, die lokal auf unserem Server gehostet werden. Es werden keine Daten an externe CDN-Anbieter übertragen.
               </p>
               
               <h3 className="h5 text-gold mb-3 mt-4">Lokale Schriftarten</h3>
