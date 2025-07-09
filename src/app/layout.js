@@ -12,6 +12,29 @@ export const metadata = {
   title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
   description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal für Ihre individuellen Bedürfnisse',
   keywords: 'Ärztevermittlung, Pflegekräfte, Pflegevermittlung, medizinisches Fachpersonal, Gesundheitspersonal, Berlin',
+  authors: [{ name: 'Black Forge Consulting' }],
+  creator: 'Black Forge Consulting',
+  publisher: 'Black Forge Consulting',
+  robots: 'index, follow',
+  openGraph: {
+    title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
+    description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal für Ihre individuellen Bedürfnisse',
+    url: 'https://blackforge-consulting.de',
+    siteName: 'Black Forge Consulting',
+    locale: 'de_DE',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
+    description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal',
+  },
+  alternates: {
+    canonical: 'https://blackforge-consulting.de',
+  },
+  verification: {
+    google: 'your-google-verification-code-here',
+  },
 }
 
 const inter = Inter({ subsets: ['latin'] })
