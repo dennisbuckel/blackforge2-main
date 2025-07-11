@@ -9,21 +9,21 @@ import ClientScripts from '@/components/ClientScripts'
 
 
 export const metadata = {
-  title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
-  description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal für Ihre individuellen Bedürfnisse',
-  keywords: 'Ärztevermittlung, Pflegekräfte, Pflegevermittlung, medizinisches Fachpersonal, Gesundheitspersonal, Berlin',
+  title: 'Black Forge Consulting | Unternehmensberatung & Personalvermittlung',
+  description: 'Strategische Unternehmensberatung, professionelle Personalvermittlung und M&A-Beratung. Ihr Partner für nachhaltigen Unternehmenserfolg und maßgeschneiderte Lösungen.',
+  keywords: 'Unternehmensberatung, Personalvermittlung, M&A, Unternehmensnachfolge, Mitarbeitergewinnung, Mitarbeiterbindung, Umsatzsteigerung, Strategieberatung, Berlin',
   authors: [{ name: 'Black Forge Consulting' }],
   creator: 'Black Forge Consulting',
   publisher: 'Black Forge Consulting',
   robots: 'index, follow',
   icons: {
-    icon: '/logo.svg',
-    shortcut: '/logo.svg',
-    apple: '/logo.svg',
+    icon: '/logo.jpeg',
+    shortcut: '/logo.jpeg',
+    apple: '/logo.jpeg',
   },
   openGraph: {
-    title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
-    description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal für Ihre individuellen Bedürfnisse',
+    title: 'Black Forge Consulting | Unternehmensberatung & Personalvermittlung',
+    description: 'Strategische Unternehmensberatung, professionelle Personalvermittlung und M&A-Beratung. Ihr Partner für nachhaltigen Unternehmenserfolg und maßgeschneiderte Lösungen.',
     url: 'https://blackforge-consulting.de',
     siteName: 'Black Forge Consulting',
     locale: 'de_DE',
@@ -31,8 +31,8 @@ export const metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Black Forge Consulting | Premium medizinisches Fachpersonal',
-    description: 'Professionelle Vermittlung von qualifizierten Ärzten, Pflegekräften und medizinischem Fachpersonal',
+    title: 'Black Forge Consulting | Unternehmensberatung & Personalvermittlung',
+    description: 'Strategische Unternehmensberatung, professionelle Personalvermittlung und M&A-Beratung für nachhaltigen Unternehmenserfolg.',
   },
   alternates: {
     canonical: 'https://blackforge-consulting.de',
