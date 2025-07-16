@@ -59,8 +59,10 @@ export default function RootLayout({ children }) {
     <html lang="de">
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
+        <link rel="icon" href="/favicon.png" type="image/png" />
         <link rel="icon" href="/favicon.ico" type="image/x-icon" />
         <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
+        <link rel="apple-touch-icon" href="/logo.jpeg" />
       </head>
       <body className="font-inter">
         <Header />
