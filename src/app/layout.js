@@ -28,6 +28,14 @@ export const metadata = {
     siteName: 'Black Forge Consulting',
     locale: 'de_DE',
     type: 'website',
+    images: [
+      {
+        url: '/logo.jpeg',
+        width: 1024,
+        height: 1024,
+        alt: 'Black Forge Consulting Logo',
+      },
+    ],
   },
   twitter: {
     card: 'summary_large_image',
