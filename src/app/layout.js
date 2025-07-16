@@ -17,8 +17,8 @@ export const metadata = {
   publisher: 'Black Forge Consulting',
   robots: 'index, follow',
   icons: {
-    icon: '/logo.jpeg',
-    shortcut: '/logo.jpeg',
+    icon: '/favicon.ico',
+    shortcut: '/favicon.ico',
     apple: '/logo.jpeg',
   },
   openGraph: {
